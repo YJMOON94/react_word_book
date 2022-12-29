@@ -2,14 +2,25 @@ import { React, useState } from 'react';
 import PropTypes from 'prop-types';
 
 const Word = ({ word }) => {
+    const [wordDel, setWordDel] = useState(word);
     const [isShow, setIsShow] = useState(false);
     const [isDone, setIsDone] = useState(word.isDone);
-
+    console.log(wordDel);
     const del = () => {
         if (window.confirm('삭제하시겠습니까?')) {
-            console.log('삭제되었습니다.');
+            fetch(`http://localhost:3001/words/${word.id}`, {
+                method: 'DELETE',
+            }).then((res) => {
+                if (res.ok) {
+                    setWordDel({ id: 0 });
+                }
+            });
         }
     };
+
+    if (wordDel.id === 0) {
+        return null;
+    }
 
     const toggleDone = () => {
         fetch(`http://localhost:3001/words/${word.id}`, {
