@@ -6,18 +6,6 @@ import Word from './Word';
 import useFetch from '../hooks/useFetch';
 const Days = () => {
     const { day } = useParams();
-
-    // const [word, setWord] = useState([]);
-    // useEffect(() => {
-    //     fetch(`http://localhost:3001/words?day=${day}`)
-    //         .then((res) => {
-    //             return res.json();
-    //         })
-    //         .then((data) => {
-    //             setWord(data);
-    //         });
-    // }, [day]);
-
     const word = useFetch(`http://localhost:3001/words?day=${day}`);
 
     return (

@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 const CreateWord = () => {
     const days = useFetch(`http://localhost:3001/days/`);
-
+    const words = useFetch(`http://localhost:3001/words/`);
     const onSubmit = (e) => {
         e.preventDefault();
     };
@@ -34,24 +34,37 @@ const CreateWord = () => {
     };
 
     return (
-        <form onSubmit={onSubmit}>
-            <div className="eng_word">
-                <input type="text" placeholder="book" ref={engRef} />
-                <lbael>영어 입력</lbael>
-            </div>
-            <div className="kor_word">
-                <input type="text" placeholder="책" ref={korRef} />
-                <lbael>한글 입력</lbael>
-            </div>
-            <select className="select_day" ref={dayRef}>
-                {days.map((day) => (
-                    <option key={day.id} value={day.day}>
-                        {day.day}
-                    </option>
-                ))}
-            </select>
-            <button onClick={saveWord}>저장</button>
-        </form>
+        <div className="add_word">
+            <h3>
+                현재 <span>{words.length}</span>개의 단어를 공부했습니다
+            </h3>
+            <form onSubmit={onSubmit}>
+                <div className="eng_word">
+                    <input
+                        id="eng"
+                        type="text"
+                        placeholder="book"
+                        ref={engRef}
+                    />
+                    <label htmlFor="eng">단어 입력</label>
+                </div>
+                <div className="kor_word">
+                    <input id="kor" type="text" placeholder="책" ref={korRef} />
+                    <label htmlFor="kor">뜻 입력</label>
+                </div>
+                <select id="select_day" ref={dayRef}>
+                    {days.map((day) => (
+                        <option key={day.id} value={day.day}>
+                            {day.day}
+                        </option>
+                    ))}
+                </select>
+                <label className="select_day_label" htmlFor="select_day">
+                    날짜 선택
+                </label>
+                <button onClick={saveWord}>저장</button>
+            </form>
+        </div>
     );
 };
 

@@ -17,8 +17,10 @@ const CreateDay = () => {
         });
     };
     return (
-        <div className="input_area">
-            <h3>현재 날짜는 {days.length} 일 입니다.</h3>
+        <div className="add_day">
+            <h3>
+                현재 <span>{days.length}</span> 일째 연습중 입니다.
+            </h3>
             <button onClick={saveDay}>날짜 추가하기</button>
         </div>
     );

@@ -44,27 +44,21 @@ const Word = ({ word }) => {
 
     return (
         <li className={isDone ? 'done' : ''}>
-            <ul className="todo_inner">
-                <li>
-                    <input
-                        type="checkbox"
-                        checked={isDone}
-                        onChange={toggleDone}
-                    />
-                </li>
-                <li>
-                    <span>{word.eng}</span>
-                    <span>{isShow && word.kor}</span>
-                </li>
-                <li>
-                    <button onClick={toggleShow} className="btn_check">
-                        {isShow ? '뜻 숨기기' : '뜻 보기'}
-                    </button>
-                    <button className="btn_del" onClick={del}>
-                        삭제
-                    </button>
-                </li>
-            </ul>
+            <input
+                id={`checkbox${word.id}`}
+                type="checkbox"
+                checked={isDone}
+                onChange={toggleDone}
+            />
+            <label className="checkbox" htmlFor={`checkbox${word.id}`}></label>
+            <span>{word.eng}</span>
+            <span>{isShow && word.kor}</span>
+            <button onClick={toggleShow} className="btn_check">
+                {isShow ? '뜻 숨기기' : '뜻 보기'}
+            </button>
+            <button className="btn_del" onClick={del}>
+                삭제
+            </button>
         </li>
     );
 };

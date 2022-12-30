@@ -11,14 +11,16 @@ import LinkError from './components/LinkError';
 function App() {
     return (
         <BrowserRouter>
-            <Header />
-            <Routes>
-                <Route path="/" element={<DayList />} />
-                <Route path="/create_word" element={<CreateWord />} />
-                <Route path="/create_day" element={<CreateDay />} />
-                <Route path="/day/:day" element={<Days />} />
-                <Route path="*" element={<LinkError />} />
-            </Routes>
+            <div className="word_book">
+                <Header />
+                <Routes>
+                    <Route path="/" element={<DayList />} />
+                    <Route path="/create_word" element={<CreateWord />} />
+                    <Route path="/create_day" element={<CreateDay />} />
+                    <Route path="/day/:day" element={<Days />} />
+                    <Route path="*" element={<LinkError />} />
+                </Routes>
+            </div>
         </BrowserRouter>
     );
 }
