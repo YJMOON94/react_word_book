@@ -26,53 +26,25 @@
       "isDone": false
     },
     {
-      "id": 4,
-      "day": 2,
-      "eng": "pencil",
-      "kor": "연필",
-      "isDone": false
+      "day": "1",
+      "eng": "book",
+      "kor": "책",
+      "isDone": false,
+      "id": 4
     },
     {
-      "day": "3",
-      "eng": "window",
-      "kor": "창문",
+      "day": "2",
+      "eng": "React",
+      "kor": "리엑트",
       "isDone": false,
       "id": 5
     },
     {
-      "day": "3",
-      "eng": "house",
-      "kor": "집",
+      "day": "1",
+      "eng": "vue",
+      "kor": "뷰",
       "isDone": false,
       "id": 6
-    },
-    {
-      "day": "2",
-      "eng": "mouse",
-      "kor": "쥐",
-      "isDone": false,
-      "id": 7
-    },
-    {
-      "day": "4",
-      "eng": "monkey",
-      "kor": "원숭이",
-      "isDone": true,
-      "id": 8
-    },
-    {
-      "day": "4",
-      "eng": "apple",
-      "kor": "사과",
-      "isDone": false,
-      "id": 9
-    },
-    {
-      "day": "3",
-      "eng": "apple",
-      "kor": "사과",
-      "isDone": false,
-      "id": 10
     }
   ]
 }

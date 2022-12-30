@@ -5,7 +5,7 @@ const Word = ({ word }) => {
     const [wordDel, setWordDel] = useState(word);
     const [isShow, setIsShow] = useState(false);
     const [isDone, setIsDone] = useState(word.isDone);
-    console.log(wordDel);
+
     const del = () => {
         if (window.confirm('삭제하시겠습니까?')) {
             fetch(`http://localhost:3001/words/${word.id}`, {
