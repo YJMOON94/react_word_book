@@ -1,7 +1,10 @@
-import { React } from 'react';
+import { React, useEffect } from 'react';
 import useFetch from '../hooks/useFetch';
+import { useNavigate } from 'react-router-dom';
 const CreateDay = () => {
+    useEffect(() => {});
     const days = useFetch(`http://localhost:3001/days`);
+    const navigate = useNavigate();
 
     const saveDay = () => {
         fetch(`http://localhost:3001/days`, {
@@ -13,6 +16,7 @@ const CreateDay = () => {
         }).then((res) => {
             if (res.ok) {
                 alert('날짜가 추가되었습니다');
+                navigate('/react');
             }
         });
     };

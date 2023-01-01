@@ -41,5 +41,6 @@
     "eslint": "^8.30.0",
     "eslint-plugin-react": "^7.31.11",
     "prettier": "2.8.1"
-  }
+  },
+  "homepage" : "https://jasika.cafe24.com/react"
 }

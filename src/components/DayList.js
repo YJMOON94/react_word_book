@@ -8,7 +8,7 @@ const DayList = () => {
         <ul className="list">
             {days.map((todo) => (
                 <li key={todo.id}>
-                    <Link to={`/day/${todo.day}`}>DAY. {todo.day}</Link>
+                    <Link to={`/react/day/${todo.day}`}>DAY. {todo.day}</Link>
                 </li>
             ))}
         </ul>

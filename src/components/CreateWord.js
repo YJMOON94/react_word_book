@@ -28,7 +28,7 @@ const CreateWord = () => {
         }).then((res) => {
             if (res.ok) {
                 alert('추가완료');
-                navigate(`/day/${dayRef.current.value}`);
+                navigate(`/react/day/${dayRef.current.value}`);
             }
         });
     };
